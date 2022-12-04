@@ -1,0 +1,113 @@
+@font-face {
+  font-family: Anek Kannada;
+  src: url(../globalComponents/Anek.ttf);
+}
+
+.auctions-bundles-container{
+  padding: 40px;
+  font-family: 'Anek Kannada', serif;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  .bundle{
+    margin-bottom: 50px;
+    border: solid black 2px;
+    background: white;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    width: 530px;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    .top-side{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      .emblem-container{
+        border-top: solid 5px black;
+        padding-top: 5px;
+        height: 120px;
+        width: 120px;
+        .emblem{
+          height: 100%;
+          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+        }
+      }
+      .fast-cards-container{
+        border-top: solid 5px black;
+        width: 370px;
+        display: flex;
+        flex-direction: column;
+        .fast-card{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          .name{
+            text-align: left;
+            flex-grow: 5;
+          }
+          .risk,.floor,.average,.last{
+            text-align: right;
+            flex-grow: 2;
+          }
+        }
+      }
+    }
+    .bottom-side{
+      margin-bottom: 10px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 27px;
+      height: 180px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      .left-side,.right-side{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .bar-x{
+        width: 2px;
+        height: 100%;
+        background: black;
+      }
+      .infos-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .bar-y{
+          position:relative ;
+          top: -5px;
+          width: 200px;
+          height: 2px;
+          background: black;
+        }
+        .info{
+          margin-top: 7px;
+          width: 230px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+      }
+
+      .fav-button,.buy-button{
+        background: black;
+        color: white;
+        height: 41px;
+        width: 90%;
+        box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+        transition: background-color 200ms,color 200ms;
+      }
+      .fav-button:hover,.buy-button:hover{
+        background: white;
+        color: black;
+      }
+    }
+  }
+}

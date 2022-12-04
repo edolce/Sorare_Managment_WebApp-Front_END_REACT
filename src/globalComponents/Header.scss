@@ -1,0 +1,156 @@
+@font-face {
+  font-family: Anek Kannada;
+  src: url(Anek.ttf);
+}
+
+//*{
+//  box-sizing: border-box;
+//}
+
+.header{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 90px;
+  background: #000001;
+  align-items: center;
+  z-index: 2;
+  .logo{
+    position: relative;
+    font-family: 'Anek Kannada', serif;
+    color: white;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    top: 7px;
+    left: 20px;
+  }
+  .menu{
+    .menu-sub{
+      position: relative;
+      .bundle-auction-main{
+        white-space: nowrap;
+        top: -17px;
+        left: -385px;
+        position: absolute;
+        z-index: 4;
+        font-family: 'Anek Kannada', serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 45px;
+        line-height: 59px;
+        color: #FFFFFF;
+        .line{
+          top: -8px;
+          left: -10px;
+          position: relative;
+          width: 103%;
+          height: 2px;
+          background: #ffffff;
+        }
+      }
+      .personal-area-main{
+        white-space: nowrap;
+        top: -17px;
+        left: -315px;
+        position: absolute;
+        z-index: 4;
+        font-family: 'Anek Kannada', serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 45px;
+        line-height: 59px;
+        color: #FFFFFF;
+        .line{
+          top: -8px;
+          left: -10px;
+          position: relative;
+          width: 103%;
+          height: 2px;
+          background: #ffffff;
+        }
+      }
+      .personal-area-second{
+        top: 0px;
+        left: -480px;
+        position: absolute;
+        z-index: 4;
+        font-family: 'Anek Kannada', serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 17px;
+        color: #FFFFFF;
+        transform: rotate(-59.65deg);
+        transition: font-size 0.5s,left 0.5s;
+      }
+      .personal-area-second:hover{
+        cursor: pointer;
+        font-size: 15px;
+        left: -485px;
+      }
+      .bundle-auction-second{
+        top: 0px;
+        left: -410px;
+        position: absolute;
+        z-index: 4;
+        font-family: 'Anek Kannada', serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 17px;
+        color: #FFFFFF;
+        transform: rotate(-59.65deg);
+        transition: font-size 0.5s,left 0.5s;
+      }
+      .bundle-auction-second:hover{
+        cursor: pointer;
+        font-size: 13px;
+        left: -420px;
+      }
+      .triangle{
+        bottom: -60px;
+        position: absolute;
+        border-style: solid;
+        border-width: 0 400px 693px 400px;
+        height: 0;
+        width: 0;
+      }
+      .red-bundle{
+        left: -450px;
+        z-index: 3;
+        border-color: transparent transparent #860000 transparent;
+      }
+      .white-bundle{
+        box-shadow: 0 5px 4px rgba(0, 0, 0, 0.25);
+        left: -490px;
+        z-index: 1;
+        border-color: transparent transparent #ffffff transparent;
+      }
+      .black-bundle{
+        left: -485px;
+        position: absolute;
+        z-index: 2;
+        border-color: transparent transparent #000000 transparent;
+      }
+      .red-personal{
+        left: -380px;
+        z-index: 3;
+        border-color: transparent transparent #860000 transparent;
+      }
+      .white-personal{
+        box-shadow: 0 5px 4px rgba(0, 0, 0, 0.25);
+        left: -420px;
+        z-index: 1;
+        border-color: transparent transparent #ffffff transparent;
+      }
+      .black-personal{
+        left: -415px;
+        position: absolute;
+        z-index: 2;
+        border-color: transparent transparent #000000 transparent;
+      }
+    }
+  }
+}

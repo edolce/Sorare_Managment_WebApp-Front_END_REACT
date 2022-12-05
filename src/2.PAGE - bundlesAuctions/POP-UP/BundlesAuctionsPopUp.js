@@ -1,5 +1,5 @@
 import {Component} from "react";
-import BundleCardAuction from "../BundleCardAuction";
+import BundleAuctionComponent from "../BundleAuctionComponent";
 import AuctionCardPopUp from "./AuctionCardPopUp";
 import "./BundlesAuctionPopUp.css"
 

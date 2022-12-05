@@ -25,7 +25,7 @@ function Info(props) {
     );
 }
 
-class BundleCardAuction extends Component{
+class BundleAuctionComponent extends Component{
     key=0
 
     constructor(props) {
@@ -84,4 +84,4 @@ class BundleCardAuction extends Component{
     }
 }
 
-export default BundleCardAuction
+export default BundleAuctionComponent

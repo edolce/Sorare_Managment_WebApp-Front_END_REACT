@@ -1,5 +1,5 @@
 import {Component} from "react";
-import BundleCardAuction from "./BundleCardAuction";
+import BundleAuctionComponent from "./BundleAuctionComponent";
 
 
 class BundlesAuctionsPage extends Component{
@@ -17,7 +17,7 @@ class BundlesAuctionsPage extends Component{
                 {
                     this.props.bundles?.map(
                         bundle => (
-                        <BundleCardAuction key={this.key++} data-key={this.key} bundle={bundle} playersPriceData={this.props.playersPriceData} openPopUp={() => this.props.openPopUp(bundle)}/>
+                        <BundleAuctionComponent key={this.key++} data-key={this.key} bundle={bundle} playersPriceData={this.props.playersPriceData} openPopUp={() => this.props.openPopUp(bundle)}/>
                     ))
                 }
             </div>

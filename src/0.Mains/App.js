@@ -1,16 +1,17 @@
 import {Component} from "react";
 import './App.css';
-import BundlesAuctionsPage from "../PAGE - bundlesAuctions/BundlesAuctionsPage";
-import Header from "../globalComponents/Header";
-import BundlesAuctionsPopUp from "../PAGE - bundlesAuctions/POP-UP/BundlesAuctionsPopUp";
-import PersonalPage from "../PAGE - personalPage/PersonalPage";
-import PersonalPagePopUp from "../PAGE - personalPage/POP-UP/PersonalPagePopUp";
-import BundlesAuctionData from "../DATA - fetch/BundlesAuctionData";
+import BundlesAuctionsPage from "../2.PAGE - bundlesAuctions/BundlesAuctionsPage";
+import Header from "../1.HEADER/Header";
+import BundlesAuctionsPopUp from "../2.PAGE - bundlesAuctions/POP-UP/BundlesAuctionsPopUp";
+import PersonalPage from "../2.PAGE - personalPage/PersonalPage";
+import PersonalPagePopUp from "../2.PAGE - personalPage/POP-UP/PersonalPagePopUp";
 import PersonalData from "../DATA - fetch/PersonalData";
 
+//MAIN APP PAGE
 
 class App extends Component {
 
+    //Fetched boolean to check if data is fetched correctly
     isFetched = false
 
     constructor(props) {
@@ -299,10 +300,12 @@ class App extends Component {
 
     }
 
+    //
     componentDidUpdate(prevProps, prevState, snapshot) {
         console.log(this.state)
     }
 
+    //Function to activate the open POPUP PROCESS
     openPopUp(bundle){
         this.setState({
             showPopUp: true,
@@ -310,6 +313,7 @@ class App extends Component {
         })
     }
 
+    //Function to activate the close POPUP PROCESS
     closePopUp(){
         this.setState({
             showPopUp: false,
@@ -317,6 +321,8 @@ class App extends Component {
         })
     }
 
+
+    // Check if data is not yet Fetched, if not fetch it
     componentDidMount() {
         if(!this.isFetched){
             this.isFetched=true
@@ -325,22 +331,53 @@ class App extends Component {
         }
     }
 
+
+    /*
+    * Get current main page of the site.
+    * It can be:
+    * - Bundles Auctions Page: Shows all active bundle auctions.
+    * - Personal Page: Shows all Personal Data.
+    * [Output Decision]:Output is decide by showAuctionsBundles BOOL value
+    */
+    getCurrentMainPage(){
+        if(this.state.showAuctionsBundles){
+            return(<BundlesAuctionsPage bundles={this.state.auctionsBundles} playersPriceData={this.state.letPlayerAverage} openPopUp={(bundle) => this.openPopUp(bundle)}/>);
+        }else{
+            return(<PersonalPage bundles={this.state.personalBundles} openPopUp={(bundle) => this.openPopUp(bundle)}/>);
+        }
+    }
+
+
+    /*
+    * Function that check if there is a pop=up to be displayed, if it is display it.
+    * Possible Pop-ups:
+    * - Bundle Auctions Pop-Up
+    * - Personal Page Pop-up
+    * [Output Decision]:Output is decide by showAuctionsBundles e BOOL value
+    */
+    getPopUp() {
+
+        // If state don't want to shop pop up don't show
+        if(!this.state.showPopUp) return;
+
+        if(this.state.showAuctionsBundles){
+            return (<BundlesAuctionsPopUp bundle={this.state.popUpBundle} closePopUp={() => this.closePopUp()}/>);
+        }else {
+            return (<PersonalPagePopUp bundle={this.state.popUpBundle} closePopUp={() => this.closePopUp()}/>);
+        }
+    }
+
     render() {
         return (
             <>
+                {/*1.HEADER*/}
                 <Header showAuctionsBundles={this.state.showAuctionsBundles} changePage={() => this.setState({showAuctionsBundles: !this.state.showAuctionsBundles})}/>
 
+                {/*MAIN CONTENT*/}
+                {this.getCurrentMainPage()}
 
-                {this.state.showAuctionsBundles &&
-                    <BundlesAuctionsPage bundles={this.state.auctionsBundles} playersPriceData={this.state.letPlayerAverage} openPopUp={(bundle) => this.openPopUp(bundle)}/>}
-                {!this.state.showAuctionsBundles &&
-                    <PersonalPage bundles={this.state.personalBundles} openPopUp={(bundle) => this.openPopUp(bundle)}/>}
-
-
-                {this.state.showAuctionsBundles && this.state.showPopUp &&
-                    <BundlesAuctionsPopUp bundle={this.state.popUpBundle} closePopUp={() => this.closePopUp()}/>}
-                {!this.state.showAuctionsBundles && this.state.showPopUp &&
-                    <PersonalPagePopUp bundle={this.state.popUpBundle} closePopUp={() => this.closePopUp()}/>}
+                {/*GET POSSIBLE POP-UP*/}
+                {this.getPopUp()}
             </>
         )
     }

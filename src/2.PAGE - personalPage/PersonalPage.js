@@ -1,5 +1,5 @@
 import {Component} from "react";
-import BundleCardAuction from "../PAGE - bundlesAuctions/BundleCardAuction";
+import BundleAuctionComponent from "../2.PAGE - bundlesAuctions/BundleAuctionComponent";
 import BundleCardPersonal from "./BundleCardPersonal";
 
 class PersonalPage extends Component{

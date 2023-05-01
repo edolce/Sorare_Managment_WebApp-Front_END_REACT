@@ -1,0 +1,272 @@
+@font-face {
+  font-family: Anek Kannada;
+  src: url(../1.HEADER/Anek.ttf);
+}
+.auctions-bundles-container {
+  padding: 40px;
+  font-family: "Anek Kannada", serif;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.auctions-bundles-container .bundle {
+  margin-bottom: 50px;
+  border: solid black 2px;
+  background: white;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  width: 530px;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.auctions-bundles-container .bundle .bookmarks {
+  display: flex;
+  justify-content: center;
+  width: 30px;
+  height: 20px;
+  background-color: black;
+  position: absolute;
+  top: -5px;
+  left: 10px;
+  border-color: #007bff transparent transparent transparent;
+  filter: drop-shadow(8px 10px 7px rgba(0, 0, 0, 0.5));
+}
+.auctions-bundles-container .bundle .bookmarks span {
+  color: white;
+  position: relative;
+  z-index: 3;
+}
+.auctions-bundles-container .bundle .bookmarks::before,
+.auctions-bundles-container .bundle .bookmarks::after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: -15px;
+}
+.auctions-bundles-container .bundle .bookmarks::before {
+  border-left: 30px solid transparent;
+  border-right: 0px solid transparent;
+  border-top: 30px solid black; /* cambia il bordo superiore in bordo inferiore */
+  right: 0;
+}
+.auctions-bundles-container .bundle .bookmarks::after {
+  border-left: 0px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 30px solid black; /* cambia il bordo superiore in bordo inferiore */
+  left: 0;
+}
+.auctions-bundles-container .bundle .info-circle {
+  position: absolute;
+  z-index: 10;
+  top: -15px;
+  right: -15px;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.auctions-bundles-container .bundle .info-circle span {
+  font-size: 20px;
+  color: #860000;
+}
+.auctions-bundles-container .bundle .info-circle span:hover {
+  cursor: pointer;
+}
+.auctions-bundles-container .bundle .info-circle:hover {
+  cursor: pointer;
+}
+.auctions-bundles-container .bundle .info-circle-dropdown {
+  display: none;
+}
+.auctions-bundles-container .bundle .info-hover:hover + .info-circle-dropdown {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: -2px;
+  right: -2px;
+  background-color: white;
+  border: solid black 2px;
+  padding: 10px;
+  width: 400px;
+}
+.auctions-bundles-container .bundle .info-hover:hover + .info-circle-dropdown .info-circle-dropdown-title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  text-align: center;
+  color: #000000;
+}
+.auctions-bundles-container .bundle .info-hover:hover + .info-circle-dropdown .info-circle-dropdown-text {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 27px;
+  text-align: center;
+  color: #000000;
+}
+.auctions-bundles-container .bundle .top-side {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.auctions-bundles-container .bundle .top-side .emblem-container {
+  border-top: solid 5px black;
+  padding-top: 5px;
+  height: 120px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.auctions-bundles-container .bundle .top-side .emblem-container .emblem {
+  height: 100%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+}
+.auctions-bundles-container .bundle .top-side .fast-cards-container {
+  border-top: solid 5px black;
+  width: 370px;
+  display: flex;
+  flex-direction: column;
+}
+.auctions-bundles-container .bundle .top-side .fast-cards-container .fast-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.auctions-bundles-container .bundle .top-side .fast-cards-container .fast-card .name {
+  text-align: left;
+  width: 50%;
+}
+.auctions-bundles-container .bundle .top-side .fast-cards-container .fast-card .risk {
+  text-align: center;
+  width: 10%;
+}
+.auctions-bundles-container .bundle .top-side .fast-cards-container .fast-card .floor, .auctions-bundles-container .bundle .top-side .fast-cards-container .fast-card .average, .auctions-bundles-container .bundle .top-side .fast-cards-container .fast-card .last {
+  text-align: right;
+  width: 20%;
+}
+.auctions-bundles-container .bundle .bottom-side {
+  margin-bottom: 10px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 27px;
+  height: 180px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.auctions-bundles-container .bundle .bottom-side .left-side, .auctions-bundles-container .bundle .bottom-side .right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.auctions-bundles-container .bundle .bottom-side .average-selection-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.auctions-bundles-container .bundle .bottom-side .average-selection-container .average-selection-button {
+  width: 50%;
+  background: black;
+  color: white;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+  transition: background-color 200ms, color 200ms;
+  margin: 0 5px;
+}
+.auctions-bundles-container .bundle .bottom-side .average-selection-container .average-selection-button:hover {
+  background: white;
+  color: black;
+}
+.auctions-bundles-container .bundle .bottom-side .bar-x {
+  width: 2px;
+  height: 100%;
+  background: black;
+}
+.auctions-bundles-container .bundle .bottom-side .infos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.auctions-bundles-container .bundle .bottom-side .infos-container .bar-y {
+  position: relative;
+  top: -5px;
+  width: 200px;
+  height: 2px;
+  background: black;
+}
+.auctions-bundles-container .bundle .bottom-side .infos-container .info {
+  margin-top: 7px;
+  width: 230px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.auctions-bundles-container .bundle .bottom-side .change-view-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.auctions-bundles-container .bundle .bottom-side .change-view-button-container .change-view-button {
+  background: black;
+  color: white;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+  transition: background-color 200ms, color 200ms;
+  margin: 0 5px;
+}
+.auctions-bundles-container .bundle .bottom-side .change-view-button-container .change-view-button:hover {
+  background: white;
+  color: black;
+}
+.auctions-bundles-container .bundle .bottom-side .fav-button, .auctions-bundles-container .bundle .bottom-side .buy-button {
+  background: black;
+  color: white;
+  height: 41px;
+  width: 90%;
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+  transition: background-color 200ms, color 200ms;
+}
+.auctions-bundles-container .bundle .bottom-side .fav-button:hover, .auctions-bundles-container .bundle .bottom-side .buy-button:hover {
+  background: white;
+  color: black;
+}
+
+.filter-options {
+  display: flex;
+  padding-top: 30px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.filter-options .filter-option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.filter-options .filter-option-text:hover {
+  cursor: pointer;
+}
+.filter-options .filter-option-text {
+  font-size: 20px;
+  line-height: 27px;
+  color: #000000;
+}
+.filter-options #hide-not-safe {
+  display: none;
+}
+.filter-options #sort-by {
+  display: none;
+}
+
+/*# sourceMappingURL=BundlesAuctionsPage.css.map */

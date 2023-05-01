@@ -1,0 +1,146 @@
+@font-face {
+  font-family: Anek Kannada;
+  src: url(../../1.HEADER/Anek.ttf);
+}
+.personal-page-popup-pseudo-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.44);
+  z-index: 0;
+}
+
+.personal-page-popup-container {
+  position: absolute;
+  top: 16%;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.personal-page-popup-container .close-button {
+  font-family: "Anek Kannada", serif;
+  color: white;
+  top: -7%;
+  position: absolute;
+  z-index: 3;
+  background: #860000;
+  border: 1px solid white;
+  padding: 6px 20px 2px;
+  font-weight: 600;
+  font-size: 20px;
+  transition: background-color 200ms, color 200ms;
+}
+.personal-page-popup-container .close-button:hover {
+  background: white;
+  color: #860000;
+  cursor: pointer;
+}
+.personal-page-popup-container .card-container {
+  width: 18%;
+  height: 97%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+.personal-page-popup-container .card-container .header {
+  font-family: "Anek Kannada", serif;
+  background: black;
+  color: white;
+  height: 28px;
+  justify-content: center;
+  padding-top: 4px;
+  font-weight: 400;
+  font-size: 20px;
+}
+.personal-page-popup-container .card-container .player-image {
+  height: 35%;
+  background: white;
+  padding-top: 5px;
+  display: flex;
+  justify-content: center;
+  box-shadow: inset 0px 20px 20px rgba(0, 0, 0, 0.41);
+  border-bottom: black solid 3px;
+}
+.personal-page-popup-container .card-container .player-image img {
+  width: 80%;
+  height: auto;
+  object-fit: cover;
+  object-position: center 0%;
+}
+.personal-page-popup-container .card-container .infos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.personal-page-popup-container .card-container .infos .sell-h {
+  font-family: "Anek Kannada", serif;
+  font-size: 25px;
+  font-weight: 25px;
+}
+.personal-page-popup-container .card-container .infos .input-eth {
+  font-family: "Anek Kannada", serif;
+  margin-top: 10px;
+  background: black;
+  color: white;
+  height: 30px;
+  width: 60%;
+  font-size: 20px;
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+  transition: background-color 200ms, color 200ms;
+  text-align: center;
+}
+.personal-page-popup-container .card-container .infos button {
+  font-family: "Anek Kannada", serif;
+  font-size: 25px;
+  margin-top: 20px;
+  background: black;
+  color: white;
+  height: 41px;
+  width: 90%;
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+  transition: background-color 200ms, color 200ms;
+}
+.personal-page-popup-container .card-container .infos .sub-i {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.personal-page-popup-container .card-container .infos .sub-i .sub-h {
+  margin-top: 10px;
+  font-family: "Anek Kannada", serif;
+  font-weight: 600;
+  font-size: 19px;
+}
+.personal-page-popup-container .card-container .infos .sub-i .line {
+  width: 50%;
+  height: 1px;
+  background: black;
+}
+.personal-page-popup-container .card-container .infos .sub-i .sub-infos {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.personal-page-popup-container .card-container .infos .sub-i .sub-infos .info {
+  font-family: "Anek Kannada", serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid black;
+  margin: 3px;
+  padding-top: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-weight: 550;
+  font-size: 16px;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/*# sourceMappingURL=PersonalPagePopUp.css.map */

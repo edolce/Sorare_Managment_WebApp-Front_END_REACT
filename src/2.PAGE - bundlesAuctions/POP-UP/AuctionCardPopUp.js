@@ -19,10 +19,10 @@ class AuctionCardPopUp extends Component{
         return(
             <div className="card-container">
                 <div className="header">
-                    DANILO COGLIONE
+                    {this.props.card.displayName}
                 </div>
                 <div className="player-image">
-                    <img src="https://assets.sorare.com/seasonpicture/0a0d2948-19d9-4fc8-8a03-0e734816d9bd/picture/squared-fd2e5d1bb8a73e7e41132b7202c6d112" alt="player-image"/>
+                    <img src={this.props.extraInfo[this.props.card.displayName].player_image} alt="player-image"/>
                 </div>
                 <div className="infos">
                     <div className="earning-infos sub-i">

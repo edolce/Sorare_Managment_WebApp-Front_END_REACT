@@ -23,7 +23,7 @@ class BundlesAuctionsPage extends Component{
                     {
                         this.props.bundle.cards?.map(
                             card => (
-                            <AuctionCardPopUp key={this.key++} data-key={this.key} card={card}/>
+                            <AuctionCardPopUp key={this.key++} data-key={this.key} card={card} extraInfo={this.props.letPlayerAverage}/>
                         ))
                     }
                 </div>

@@ -1,4 +1,7 @@
 import './Header.css';
+import logoImage from './LOGO WHITE.png';
+
+
 
 function Header(props){
 
@@ -7,7 +10,7 @@ function Header(props){
     return(
         <div className="header">
             <div className="logo">
-                SORARE APP
+                <img src={logoImage} alt="LOGO"/>
             </div>
             <div className="menu">
                 <div className="menu-sub">

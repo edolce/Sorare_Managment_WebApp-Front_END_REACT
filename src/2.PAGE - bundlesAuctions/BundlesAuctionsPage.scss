@@ -20,6 +20,103 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    .bookmarks{
+      display: flex;
+      justify-content: center;
+      span{
+        color: white;
+        position: relative;
+        z-index: 3;
+      }
+      width: 30px;
+      height: 20px;
+      background-color: black;
+      position: absolute;
+      top: -5px;
+      left: 10px;
+      border-color: #007bff transparent transparent transparent;
+      filter: drop-shadow(8px 10px 7px rgba(0,0,0,0.5));
+    }
+    .bookmarks::before,
+    .bookmarks::after {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      bottom: -15px;
+    }
+    .bookmarks::before {
+      border-left: 30px solid transparent;
+      border-right: 0px solid transparent;
+      border-top: 30px solid black; /* cambia il bordo superiore in bordo inferiore */
+      right: 0;
+    }
+    .bookmarks::after {
+      border-left: 0px solid transparent;
+      border-right: 30px solid transparent;
+      border-top: 30px solid black; /* cambia il bordo superiore in bordo inferiore */
+      left: 0;
+    }
+    .info-circle{
+      position: absolute;
+      z-index: 10;
+
+      top: -15px;
+      right: -15px;
+
+      border-color: black;
+      border-style: solid;
+      border-width: 2px;
+
+      height: 30px;
+      width: 30px;
+      background-color: white;
+      border-radius: 50%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      span{
+        font-size: 20px;
+        color: #860000;
+
+      }
+      span:hover{
+        cursor: pointer;
+      }
+    }
+    .info-circle:hover
+    {
+      cursor: pointer;
+    }
+    .info-circle-dropdown{
+      display: none;
+    }
+    .info-hover:hover + .info-circle-dropdown{
+      display: block;
+      position: absolute;
+      z-index: 1;
+      top: -2px;
+      right: -2px;
+      background-color: white;
+      border: solid black 2px;
+      padding: 10px;
+      width: 400px;
+      .info-circle-dropdown-title{
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 27px;
+        text-align: center;
+        color: #000000;
+      }
+      .info-circle-dropdown-text{
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 27px;
+        text-align: center;
+        color: #000000;
+      }
+    }
     .top-side{
       display: flex;
       flex-direction: row;
@@ -29,6 +126,10 @@
         padding-top: 5px;
         height: 120px;
         width: 120px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
         .emblem{
           height: 100%;
           filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
@@ -45,11 +146,18 @@
           justify-content: space-between;
           .name{
             text-align: left;
-            flex-grow: 5;
+            //flex-grow: 5;
+            width: 50%;
           }
-          .risk,.floor,.average,.last{
+          .risk{
+            text-align: center;
+            //flex-grow: 1;
+            width: 10%;
+          }
+          .floor,.average,.last{
             text-align: right;
-            flex-grow: 2;
+            //flex-grow: 2;
+            width: 20%;
           }
         }
       }
@@ -58,7 +166,7 @@
       margin-bottom: 10px;
       font-style: normal;
       font-weight: 400;
-      font-size: 18px;
+      font-size: 17px;
       line-height: 27px;
       height: 180px;
       display: flex;
@@ -70,6 +178,31 @@
         justify-content: space-between;
         align-items: center;
       }
+      .average-selection-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+
+
+
+          .average-selection-button {
+            width: 50%;
+            background: black;
+            color: white;
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+            transition: background-color 200ms, color 200ms;
+            //space between buttons
+            margin: 0 5px;
+          }
+
+          .average-selection-button:hover {
+            background: white;
+            color: black;
+          }
+      }
       .bar-x{
         width: 2px;
         height: 100%;
@@ -79,6 +212,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
         .bar-y{
           position:relative ;
           top: -5px;
@@ -95,7 +229,24 @@
         }
 
       }
+      .change-view-button-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .change-view-button{
+          background: black;
+          color: white;
+          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+          transition: background-color 200ms, color 200ms;
+          //space between buttons
+          margin: 0 5px;
+        }
 
+        .change-view-button:hover {
+          background: white;
+          color: black;
+        }
+      }
       .fav-button,.buy-button{
         background: black;
         color: white;
@@ -110,4 +261,35 @@
       }
     }
   }
+}
+
+.filter-options{
+  display: flex;
+  padding-top: 30px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  .filter-option{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .filter-option-text:hover{
+    cursor: pointer;
+  }
+    .filter-option-text{
+        font-size: 20px;
+        line-height: 27px;
+        color: #000000;
+    }
+
+  #hide-not-safe{
+    display: none;
+  }
+
+  #sort-by{
+    display: none;
+  }
+
 }

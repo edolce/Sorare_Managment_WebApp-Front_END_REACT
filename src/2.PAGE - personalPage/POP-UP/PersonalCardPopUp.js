@@ -134,7 +134,7 @@ class AuctionCardPopUp extends Component{
         return(
             <div className="card-container">
                 <div className="header">
-                    DANILO POCO COGLIONE
+                    {this.props.card.player_name}
                 </div>
                 <div className="player-image" style={{background: this.colors[state]}}>
                     <img src={this.props.card.player_image} alt="player-image"/>

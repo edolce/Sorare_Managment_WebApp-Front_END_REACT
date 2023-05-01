@@ -6,6 +6,7 @@ import BundlesAuctionsPopUp from "../2.PAGE - bundlesAuctions/POP-UP/BundlesAuct
 import PersonalPage from "../2.PAGE - personalPage/PersonalPage";
 import PersonalPagePopUp from "../2.PAGE - personalPage/POP-UP/PersonalPagePopUp";
 import PersonalData from "../DATA - fetch/PersonalData";
+import BundlesAuctionData from "../DATA - fetch/BundlesAuctionData";
 
 //MAIN APP PAGE
 
@@ -326,7 +327,7 @@ class App extends Component {
     componentDidMount() {
         if(!this.isFetched){
             this.isFetched=true
-            //BundlesAuctionData.fetchBundles().then(r => this.setState(r))
+            BundlesAuctionData.fetchBundles().then(r => this.setState(r))
             PersonalData.fetchPersonalBundles().then(r => this.setState({personalBundles:r}))
         }
     }
@@ -361,7 +362,7 @@ class App extends Component {
         if(!this.state.showPopUp) return;
 
         if(this.state.showAuctionsBundles){
-            return (<BundlesAuctionsPopUp bundle={this.state.popUpBundle} closePopUp={() => this.closePopUp()}/>);
+            return (<BundlesAuctionsPopUp bundle={this.state.popUpBundle}  letPlayerAverage={this.state.letPlayerAverage} closePopUp={() => this.closePopUp()}/>);
         }else {
             return (<PersonalPagePopUp bundle={this.state.popUpBundle} closePopUp={() => this.closePopUp()}/>);
         }

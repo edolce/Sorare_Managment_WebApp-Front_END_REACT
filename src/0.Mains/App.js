@@ -328,7 +328,11 @@ class App extends Component {
         if(!this.isFetched){
             this.isFetched=true
             BundlesAuctionData.fetchBundles().then(r => this.setState(r))
-            PersonalData.fetchPersonalBundles().then(r => this.setState({personalBundles:r}))
+
+            PersonalData.fetchPersonalBundles().then(r => {
+                console.log("Personal Bundles",r)
+                this.setState({personalBundles:r})
+            })
         }
     }
 

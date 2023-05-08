@@ -23,7 +23,7 @@ function FastCard(props){
         <div className="fast-card" style={{background: colors[state]}}>
             <span className="name">{props.card.player_name}</span>
             <span className="state">{state}</span>
-            <span className="price">{props.card.listing_price/Math.pow(10,18)} ETH</span>
+            <span className="price">{props.card.sold_price/Math.pow(10,18)} ETH</span>
             <span className="date">{props.card.last_insertion_date.split('T')[0]}</span>
             <span className="contested-times">WIP</span>
         </div>
@@ -58,7 +58,7 @@ class BundleCardPersonal extends Component{
         let guadagniTotali = - this.props.bundle.buy_price
 
         this.props.bundle.cards.map( card => {
-            if (card.is_sold) guadagniTotali+=card.listing_price
+            if (card.is_sold) guadagniTotali += card.sold_price
         })
 
         return(
